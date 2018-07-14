@@ -20,6 +20,7 @@ This project showcases an attempt to forecast securities using technical indicat
 -----
 
 ## Problem Statement 
+ <a class="anchor" id="Problem-Statement"></a>
 
 
 The problem at hand is to evaluate and predict securities using statistical analyses of market activity (e.g. price & volume) and SEC filings.
@@ -27,12 +28,14 @@ The problem at hand is to evaluate and predict securities using statistical anal
 -----
 
 ## Assumptions
+ <a class="anchor" id="Assumptions"></a>
 
 The initial assumption is that the market moves in trends, therefore engineering short, medium, and long term patterns/trends (moving averages) will be a good indicator and trading strategy.
 
 -------
 
 ## Introduction
+ <a class="anchor" id="Introduction"></a>
 
 This project is broken down into two main sub-directories. Beginning with, [Stocks](../capstone/stocks), which is the indicative dataset containing the historical price of a security. The second, is the [SEC](../capstone/sec), directory, where the data concerning with SEC filings is scraped and analyzed. Below, is a more extensive introduction and overview of the project and it's to sub-directories.
 
@@ -56,6 +59,8 @@ Following the EDA, the data was [prepared](../capstone/stocks/Apple_Model_Classi
 ----------
 
 ## Built with
+ <a class="anchor" id="Built-With"></a>
+
 
 #### This project was built with the following tools:
 - Python
@@ -72,7 +77,7 @@ Following the EDA, the data was [prepared](../capstone/stocks/Apple_Model_Classi
 
 
 #### Installations
-
+<a id= ''Directory-Structure></a>
 If the repository is downloaded and the notebooks would liked to be ran using Jupyter Notebook/Lab, please install the dependencies below:
 
 - [Quandle](https://docs.quandl.com/docs/python-installation)
@@ -84,6 +89,8 @@ If the repository is downloaded and the notebooks would liked to be ran using Ju
 
 
 ## Directory Structure
+ <a class="anchor" id="Directory-Structure"></a>
+
 An index of both directories are provided below.
 ### Stocks:
 
@@ -117,7 +124,8 @@ The [SEC](../capstone/sec) directory, has notebooks scraping and analyzing Apple
 
 ------- 
 
-## Exploratory Data Analysis
+## Exploratory Data Analysis 
+ <a class="anchor" id="Exploratory-Data-Analysis"></a>
 
 
 
@@ -126,18 +134,20 @@ The [SEC](../capstone/sec) directory, has notebooks scraping and analyzing Apple
 ------- 
 
 ## Preprocessing Data
-
+ <a class="anchor" id="Preprocessing-Data"></a>
 Since the stock data is sequential and dealing with time, the training and testing set have to be done manually. Reason being, the training data must be historical data since the main objective to predict the future price. 
 
 ------- 
 
 ## Optimal Model
+ <a class="anchor" id="Optimal-Model"></a>
 
 
 
 ------- 
 
 ## Conclusion
+ <a class="anchor" id="Conclusion"></a>
 
 
 
@@ -145,6 +155,7 @@ Since the stock data is sequential and dealing with time, the training and testi
 --------
 
 ## Credits
+ <a class="anchor" id="Credits"></a>
 
 Special thanks to:
 
