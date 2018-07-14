@@ -38,24 +38,24 @@ The initial assumption is that the market moves in trends, therefore engineering
 ## Introduction
  <a class="anchor" id="Introduction"></a>
 
-This project is broken down into two main sub-directories. Beginning with, [Stocks](../capstone/stocks), which is the indicative dataset containing the historical price of a security. The second, is the [SEC](../capstone/sec), directory, where the data concerning with SEC filings is scraped and analyzed. Below, is a more extensive introduction and overview of the project and it's to sub-directories.
+This project is broken down into two main sub-directories. Beginning with, [Stocks](../stocks), which is the indicative dataset containing the historical price of a security. The second, is the [SEC](../sec), directory, where the data concerning with SEC filings is scraped and analyzed. Below, is a more extensive introduction and overview of the project and it's to sub-directories.
 
 #### Stock Data:
  The indicative, or stock, data is sourced from [Quandle](https://www.quandl.com/)'s API and is a data set of historical stock data since the company's Initial Price Offering, which is the very first sale of stock issued by a company to the public.
 
-Subsequently,  [Exploratory Data Analysis](../capstone/stocks/Apple_EDA.ipynb) (EDA) is performed. During this stage the data is analyzed, visualized, and feasture engineering. Feature engineering is the process of transforming the raw data into to effectively represent the underlying problem in predictive modeling. In the attempt to engineer the data, *moving averages*, *percent changes*, and *difference* in values are calculated--if these concepts are foreign to you, please do not worry as these concepts will be discussed in further detail  later. 
+Subsequently,  [Exploratory Data Analysis](../stocks/Apple_EDA.ipynb) (EDA) is performed. During this stage the data is analyzed, visualized, and feature engineering. Feature engineering is the process of transforming the raw data into to effectively represent the underlying problem in predictive modeling. In the attempt to engineer the data, *moving averages*, *percent changes*, and *difference* in values are calculated--if these concepts are foreign to you, please do not worry as these concepts will be discussed in further detail  later. 
 
-Upon analyzing and engineering the features, the data is [preprocessed](../capstone/stocks/Apple_Model_1_Data_Prep.ipynb) and prepared for predictive modeling.  Since the stock data is sequential and dealing with time, the training and testing set were done manually. 
+Upon analyzing and engineering the features, the data is [preprocessed](../stocks/Apple_Model_1_Data_Prep.ipynb) and prepared for predictive modeling.  Since the stock data is sequential and dealing with time, the training and testing set were done manually. 
 
-Thereafter, the data is trained using machine learning models such as: [Linear](../capstone/stocks/Apple_Model_2_Linear_Regression.ipynb) Regression, [Random Forest](../capstone/stocks/Apple_Model_3_Random_Forest.ipynb) Regression, [Bagging Regression](../capstone/stocks/Apple_Model_3_Random_Forest.ipynb) on a Random Forest, and Regression using Facebook's [Prophet](../capstone/stocks/Apple_Model_5_Prophet.ipynb). 
+Thereafter, the data is trained using machine learning models such as: [Linear](../stocks/Apple_Model_2_Linear_Regression.ipynb) Regression, [Random Forest](../stocks/Apple_Model_3_Random_Forest.ipynb) Regression, [Bagging Regression](../stocks/Apple_Model_3_Random_Forest.ipynb) on a Random Forest, and Regression using Facebook's [Prophet](../stocks/Apple_Model_5_Prophet.ipynb). 
 
 #### SEC Data:
 
-The [SEC](../capstone/sec) data is sourced from the [SEC website](https://www.sec.gov/), where the data was scraped using the *BeautifulSoup* library. Upon obtaining the documentation types, some brief [Exploratory Data Analysis](../capstone/sec/Apple_SEC_EDA.ipynb). During this brief analysis, some of document types where grouped accordingly and visualized to understand the frequency of filing. 
+The [SEC](../capstone/sec) data is sourced from the [SEC website](https://www.sec.gov/), where the data was scraped using the *BeautifulSoup* library. Upon obtaining the documentation types, some brief [Exploratory Data Analysis](../sec/Apple_SEC_EDA.ipynb). During this brief analysis, some of document types where grouped accordingly and visualized to understand the frequency of filing. 
 
- Moreover, the SEC data was [merged](../capstone/stocks/Apple_EDA_wSEC.ipynb) with the stock data to further analyze, visualize, and feature engineer the data. The objective was to find whether an type of SEC filing was correlated to the price of the security.
+ Moreover, the SEC data was [merged](../stocks/Apple_EDA_wSEC.ipynb) with the stock data to further analyze, visualize, and feature engineer the data. The objective was to find whether an type of SEC filing was correlated to the price of the security.
 
-Following the EDA, the data was [prepared](../capstone/stocks/Apple_Model_Classification_1_Prep.ipynb), turning files into binary values and manually splitting the train and test sets. Subsequently, the data was ready to be modeled using a [Random Forest](../capstone/stocks/Apple_Model_Classification_3_Random_Forest.ipynb) Classification Model.
+Following the EDA, the data was [prepared](../stocks/Apple_Model_Classification_1_Prep.ipynb), turning files into binary values and manually splitting the train and test sets. Subsequently, the data was ready to be modeled using a [Random Forest](../stocks/Apple_Model_Classification_3_Random_Forest.ipynb) Classification Model.
 
 ----------
 
@@ -98,20 +98,20 @@ The [Stocks](../capstone/stocks) directory has notebooks analyzing *Apple, Inc.*
 
 #### Continuous Data Analysis, Preprocessing, and Modeling:
 
-- Apple [Exploratory Data Analysis](../capstone/stocks/Apple_EDA.ipynb) on Historical Stock Data.
-- Apple Exploratory Data Analysis [Interactive Graphs](../capstone/stocks/Apple_EDA_BeakerX.ipynb).
-- Apple [Preparing the Data](../capstone/stocks/Apple_Model_1_Data_Prep.ipynb) for Regression Modeling.
-- Apple Modeling: [Linear Regression](../capstone/stocks/Apple_Model_2_Linear_Regression.ipynb).
-- Apple Modeling: [Random Forest Regression](../capstone/stocks/Apple_Model_3_Random_Forest.ipynb)
-- Apple Modeling: [Bagging Regression on a Random Forest](../capstone/stocks/Apple_Model_4_Bagging_Regressor.ipynb).
-- Apple Modeling: [Facebook Prophet](../capstone/stocks/Apple_Model_5_Prophet.ipynb).
+- Apple [Exploratory Data Analysis](../stocks/Apple_EDA.ipynb) on Historical Stock Data.
+- Apple Exploratory Data Analysis [Interactive Graphs](../stocks/Apple_EDA_BeakerX.ipynb).
+- Apple [Preparing the Data](../stocks/Apple_Model_1_Data_Prep.ipynb) for Regression Modeling.
+- Apple Modeling: [Linear Regression](../stocks/Apple_Model_2_Linear_Regression.ipynb).
+- Apple Modeling: [Random Forest Regression](../stocks/Apple_Model_3_Random_Forest.ipynb)
+- Apple Modeling: [Bagging Regression on a Random Forest](../stocks/Apple_Model_4_Bagging_Regressor.ipynb).
+- Apple Modeling: [Facebook Prophet](../stocks/Apple_Model_5_Prophet.ipynb).
 
 #### Classification Data Analysis, Preprocessing, and Modeling:
 
--  Apple Exploratory Data Analysis [with the SEC Data](../capstone/stocks/Apple_EDA_wSEC.ipynb).
-- Apple [Preparing the Data](../capstone/stocks/Apple_Model_Classification_1_Prep.ipynb) for Classification Modeling.
-- Apple [Preprocessing the Data](../capstone/stocks/Apple_Model_Classification_2_Data_Preprocessing.ipynb) for Classification Modeling.
-- Apple Modeling: [Random Forest Classification](../capstone/stocks/Apple_Model_Classification_3_Random_Forest.ipynb).
+-  Apple Exploratory Data Analysis [with the SEC Data](../stocks/Apple_EDA_wSEC.ipynb).
+- Apple [Preparing the Data](../stocks/Apple_Model_Classification_1_Prep.ipynb) for Classification Modeling.
+- Apple [Preprocessing the Data](../stocks/Apple_Model_Classification_2_Data_Preprocessing.ipynb) for Classification Modeling.
+- Apple Modeling: [Random Forest Classification](../stocks/Apple_Model_Classification_3_Random_Forest.ipynb).
 
 ---------
 
@@ -119,8 +119,8 @@ The [Stocks](../capstone/stocks) directory has notebooks analyzing *Apple, Inc.*
 
 The [SEC](../capstone/sec) directory, has notebooks scraping and analyzing Apple's SEC Filings.
 
-- SEC [Scraper](../capstone/sec/Apple_SEC_Scraper.ipynb).
-- SEC [Exploratory Data Analysis](../capstone/sec/Apple_SEC_EDA.ipynb).
+- SEC [Scraper](../sec/Apple_SEC_Scraper.ipynb).
+- SEC [Exploratory Data Analysis](../sec/Apple_SEC_EDA.ipynb).
 
 ------- 
 
@@ -131,7 +131,7 @@ When inspecting the raw data frame from Quandle, we can see that thirteen featur
 
 - The price of the security when the market opens, which is depicted as the "Open".
 - The highest price of the security within a given day, which is depicted as the "High".
--  -The lowest price of the security within a given day, which is depicted as the "Low".
+-  The lowest price of the security within a given day, which is depicted as the "Low".
 -  The final price of the security when the market closes, which is depicted as the "Close".
 
 During the course of a given day, many factors may affect the price of a security. For instance, a well-regarded announcement of new product, bad news relating to the company, or any distributions made to investors. Distributions refer to a company's payment of stock to its shareholders or, *dividends*. Dividends may be paid in the form of cash, stock, or stock splits--a stock split is a corporate action to boost the liquidity (assets) of the shares by dividing its existing shares into multiple shares. When distributions are made, the adjusted prices are amended using the value of the dividends and deducting them from the regular price. Therefore, adjusted prices are often used to examine and analyze historical returns.
