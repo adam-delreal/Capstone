@@ -12,6 +12,7 @@ This project showcases an attempt to forecast securities using technical indicat
 - [Built with](#Built-with)
 - [Directory Structure](#Directory-Structure)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+- [Feature Engineering](#Feature-Engineering)
 - [Preprocessing Data](#Preprocessing-Data)
 - [Optimal Model](#Optimal-Model)
 - [Conclusion](#Conclusion)
@@ -126,29 +127,58 @@ The [SEC](../capstone/sec) directory, has notebooks scraping and analyzing Apple
 ## Exploratory Data Analysis 
  <a class="anchor" id="Exploratory-Data-Analysis"></a>
 
-![Image](../capstone/images/open_close.png?raw=true)
+When inspecting the raw data frame from Quandle, we can see that thirteen features are provided: Date, Open, High, Low, Close, Volume, Dividends , Split Ratio, Adjusted Open, Adjusted High, Adjusted Low, Adjusted Close, Adjusted Volume. These features can be categorized into four classes: the date, the regular prices, the adjusted prices, and the miscellaneous. The date range on the stock data begins on Apple's IPO date, December 12, 1980, and ends on March 27, 2018. Each day the stock market was open, four aspects of the price were taken into account, these are known as the *regular prices*:
 
+- The price of the security when the market opens, which is depicted as the "Open".
+- The highest price of the security within a given day, which is depicted as the "High".
+-  -The lowest price of the security within a given day, which is depicted as the "Low".
+-  The final price of the security when the market closes, which is depicted as the "Close".
 
+During the course of a given day, many factors may affect the price of a security. For instance, a well-regarded announcement of new product, bad news relating to the company, or any distributions made to investors. Distributions refer to a company's payment of stock to its shareholders or, *dividends*. Dividends may be paid in the form of cash, stock, or stock splits--a stock split is a corporate action to boost the liquidity (assets) of the shares by dividing its existing shares into multiple shares. When distributions are made, the adjusted prices are amended using the value of the dividends and deducting them from the regular price. Therefore, adjusted prices are often used to examine and analyze historical returns.
 
+When analyzing Apple's stocks, we can see the sudden drop in 2014. This is the result of splitting shares. In the EDA, we can see the fluctuation in the regular prices during 2014 as a sudden drop occurred. However, when analyzing the adjusted prices, we can see the distributions causing the data to be regularized. 
+
+-------
+## Feature Engineering
+ <a class="anchor" id="Feature-Engineering"></a>
+
+In order to do an indicative technical analysis, a few types of trends were engineered using the data provided. Moving averages were calculated for a short (12-Day), medium (26-Day), and long (85-Day) trend. 
+A *moving average* helps smoothen a price by filtering out the *noise* from random fluctuations in price as it follows a trend, or lag, based on historical prices. Two types of moving averages were calculated: a *simple moving average* (SMA), which is calculated by adding the most recent price and dividing that value by the number of time periods computing the average. And, an *exponential moving average*, which is similar to the SMA, but an exponential weight is applied to all observations in a period of time. 
+
+My prior assumptions presumed these features would be a good indicator in forecasting the adjusted price of a security and this was put to the test after processing the data.
 
 ------- 
 
 ## Preprocessing Data
  <a class="anchor" id="Preprocessing-Data"></a>
-Since the stock data is sequential and dealing with time, the training and testing set have to be done manually. Reason being, the training data must be historical data since the main objective to predict the future price. 
+
+Given that the data is structured in time-sequence, slitting the data into a train and test set was done manually. Reason being, the training data is based on  sequential historical prices and cannot be shuffled. 
+
+After splitting the data, the data was preprocessed using scikit learn's *MinMaxScaler*, which serves as an estimator as it scales and translates each feature individually assigning the feature a value accordingly between negative one and positive one.
+
+-----
+#### Lessons Learnt: 
+
+During this stage of the project, I struggled figuring out a decisive strategy to split the data. Thankfully, I had the guidance and help of my local instructor Douglas, who explained the reasoning behind not only splitting the data manually, but also, *shifting* the data frame one day into the future to forecast the last day in the dataset, March 27, 2018. 
+
+-----
+
+ Once the data was engineered and featured, the adjusted closing price was set as the label/target to be predicted. At this point the data was ready to be modeled.
+
 
 ------- 
 
 ## Optimal Model
  <a class="anchor" id="Optimal-Model"></a>
 
-
+After attempting several models and obtaining relatively mediocre results, Facebook's Prophet library resulted in a decent prediction. The model has the ability to predict certain periods into the future. Although the dataset ended on March 27, 2018, the Prophet has the capability to predict many periods. As of today, June 13, 2018, Apple's closing price stock is priced at $191.33, while prophet forecasted this date as $188.20. Although the predicted value is off by approximately $3, this a great prediction! 
 
 ------- 
 
 ## Conclusion
  <a class="anchor" id="Conclusion"></a>
 
+In conclusion, my assumptions were proven wrong when using the scikit-learn models, but may have been great features for the Prophet model. Forecasting the stock market is not a feasible task. In addition to this analysis, I hope to provide a lessons learnt log explains the hard tasks encountered, the discussion with my instructors and teacher assistants, and from books/articles I read. I hope the concepts are clear and the navigation through the notebook was intuitive. Thanks for taking the time to read this!
 
 ------
 ## Credits
@@ -156,4 +186,7 @@ Since the stock data is sequential and dealing with time, the training and testi
 
 Special thanks to:
 
-- Douglas Strodtman and Wesley Bosse for providing the guidance, assistance, and mentorship to complete the project. 
+- Douglas Strodtman for providing the guidance, assistance, and mentorship to complete the project. 
+- Wesley Bosse for his assistance, recommendations, and for taking the time to explain high level developer practices.
+
+Both Douglas and Wes were crucial for the completion of this project and I am very thankful for their constant help throughout the course.
