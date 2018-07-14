@@ -77,7 +77,6 @@ Following the EDA, the data was [prepared](../capstone/stocks/Apple_Model_Classi
 
 
 #### Installations
-<a id= ''Directory-Structure></a>
 If the repository is downloaded and the notebooks would liked to be ran using Jupyter Notebook/Lab, please install the dependencies below:
 
 - [Quandle](https://docs.quandl.com/docs/python-installation)
@@ -127,6 +126,7 @@ The [SEC](../capstone/sec) directory, has notebooks scraping and analyzing Apple
 ## Exploratory Data Analysis 
  <a class="anchor" id="Exploratory-Data-Analysis"></a>
 
+![Image](../capstone/images/open_close.png?raw=true)
 
 
 
@@ -150,10 +150,7 @@ Since the stock data is sequential and dealing with time, the training and testi
  <a class="anchor" id="Conclusion"></a>
 
 
-
-
---------
-
+------
 ## Credits
  <a class="anchor" id="Credits"></a>
 
