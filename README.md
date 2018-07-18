@@ -64,14 +64,14 @@ Following the EDA, the data was [prepared](https://github.com/adam-delreal/Capst
 
 
 #### This project was built with the following tools:
-- Python
-- Jupyter Notebook/Lab
-- Seaborn
-- Motplotlib
-- Numpy
-- Pandas
+- [Python](https://www.python.org/)
+- [Jupyter Notebook/Lab](http://jupyter.org/index.html)
+- [Seaborn](https://seaborn.pydata.org/introduction.html)
+- [Matplotlib](https://matplotlib.org/)
+- [Numpy](http://www.numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Quandle](https://www.quandl.com/)
+- [Quandle](https://www.quandl.com/): An API for financial, economic, and alternative datasets for investment professionals.
 - [Scikit Learn](http://scikit-learn.org/stable/index.html#)
 - [Facebook Prophet](https://research.fb.com/prophet-forecasting-at-scale/)
 - [BeakerX](http://beakerx.com/)
@@ -129,10 +129,15 @@ The [SEC](https://github.com/adam-delreal/Capstone/tree/master/sec) directory, h
 
 When inspecting the raw data frame from Quandle, we can see that thirteen features are provided: Date, Open, High, Low, Close, Volume, Dividends , Split Ratio, Adjusted Open, Adjusted High, Adjusted Low, Adjusted Close, Adjusted Volume. These features can be categorized into four classes: the date, the regular prices, the adjusted prices, and the miscellaneous. The date range on the stock data begins on Apple's IPO date, December 12, 1980, and ends on March 27, 2018. Each day the stock market was open, four aspects of the price were taken into account, these are known as the *regular prices*:
 
-- The price of the security when the market opens, which is depicted as the "Open".
-- The highest price of the security within a given day, which is depicted as the "High".
--  The lowest price of the security within a given day, which is depicted as the "Low".
--  The final price of the security when the market closes, which is depicted as the "Close".
+-   *Open*: the price of the security when the market opens.
+    
+-   *High*: the highest price of the security within a given day.
+    
+-   *Low*: the lowest price of the security within a given day.
+    
+-   *Close*: the final price of the security when the market closes.
+    
+- *Volume*: the amount of shares exchanged during a given day.
 
 During the course of a given day, many factors may affect the price of a security. For instance, a well-regarded announcement of new product, bad news relating to the company, or any distributions made to investors. Distributions refer to a company's payment of stock to its shareholders or, *dividends*. Dividends may be paid in the form of cash, stock, or stock splits--a stock split is a corporate action to boost the liquidity (assets) of the shares by dividing its existing shares into multiple shares. When distributions are made, the adjusted prices are amended using the value of the dividends and deducting them from the regular price. Therefore, adjusted prices are often used to examine and analyze historical returns.
 
@@ -143,7 +148,7 @@ When analyzing Apple's stocks, we can see the sudden drop in 2014. This is the r
  <a class="anchor" id="Feature-Engineering"></a>
 
 In order to do an indicative technical analysis, a few types of trends were engineered using the data provided. Moving averages were calculated for a short (12-Day), medium (26-Day), and long (85-Day) trend. 
-A *moving average* helps smoothen a price by filtering out the *noise* from random fluctuations in price as it follows a trend, or lag, based on historical prices. Two types of moving averages were calculated: a *simple moving average* (SMA), which is calculated by adding the most recent price and dividing that value by the number of time periods computing the average. And, an *exponential moving average*, which is similar to the SMA, but an exponential weight is applied to all observations in a period of time. 
+A *moving average* helps smoothen a price by filtering out the *noise* from random fluctuations in price as it follows a trend, or lag, based on historical prices. Two types of moving averages were calculated: a **simple moving average** (SMA), which is calculated by adding the most recent price and dividing that value by the number of time periods computing the average. And, an **exponential moving average**, which is similar to the SMA, but an exponential weight is applied to all observations in a period of time. 
 
 My prior assumptions presumed these features would be a good indicator in forecasting the adjusted price of a security and this was put to the test after processing the data.
 
