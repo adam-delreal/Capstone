@@ -139,7 +139,9 @@ When inspecting the raw data frame from Quandle, we can see that thirteen featur
     
 - *Volume*: the amount of shares exchanged during a given day.
 
-<img src="https://github.com/adam-delreal/Capstone/tree/master/images/open_close.png">
+![Test] (https://github.com/adam-delreal/Capstone/tree/master/images/open_close.png)
+
+<!-- <img src="https://github.com/adam-delreal/Capstone/tree/master/images/open_close.png"> -->
 
 During the course of a given day, many factors may affect the price of a security. For instance, a well-regarded announcement of new product, bad news relating to the company, or any distributions made to investors. Distributions refer to a company's payment of stock to its shareholders or, *dividends*. Dividends may be paid in the form of cash, stock, or stock splits--a stock split is a corporate action to boost the liquidity (assets) of the shares by dividing its existing shares into multiple shares. When distributions are made, the adjusted prices are amended using the value of the dividends and deducting them from the regular price. Therefore, adjusted prices are often used to examine and analyze historical returns.
 
