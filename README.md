@@ -139,6 +139,8 @@ When inspecting the raw data frame from Quandle, we can see that thirteen featur
     
 - *Volume*: the amount of shares exchanged during a given day.
 
+<img src="open_close.png">
+
 During the course of a given day, many factors may affect the price of a security. For instance, a well-regarded announcement of new product, bad news relating to the company, or any distributions made to investors. Distributions refer to a company's payment of stock to its shareholders or, *dividends*. Dividends may be paid in the form of cash, stock, or stock splits--a stock split is a corporate action to boost the liquidity (assets) of the shares by dividing its existing shares into multiple shares. When distributions are made, the adjusted prices are amended using the value of the dividends and deducting them from the regular price. Therefore, adjusted prices are often used to examine and analyze historical returns.
 
 When analyzing Apple's stocks, we can see the sudden drop in 2014. This is the result of splitting shares. In the EDA, we can see the fluctuation in the regular prices during 2014 as a sudden drop occurred. However, when analyzing the adjusted prices, we can see the distributions causing the data to be regularized. 
