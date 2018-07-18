@@ -139,7 +139,7 @@ When inspecting the raw data frame from Quandle, we can see that thirteen featur
     
 - *Volume*: the amount of shares exchanged during a given day.
 
-![Test] [https://github.com/adam-delreal/Capstone/tree/master/images/open_close.png]
+![Test] [./images/open_close.png]
 
 <!-- <img src="https://github.com/adam-delreal/Capstone/tree/master/images/open_close.png"> -->
 
